@@ -37,7 +37,7 @@ const Navbar = () => {
     const handleLogout = () => {
         var authKey = token;
         Service.getLogout(authKey).then(res => {
-            if(res.status === 200){
+            if(res?.status === 200){
                 dispatch(logout())
                  Swal.fire({
                     position: 'center',

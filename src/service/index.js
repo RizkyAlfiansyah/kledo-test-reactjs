@@ -18,7 +18,13 @@ export const getLogin = async (email , password) => {
         return response
     }
     catch(error){
-       console.log('error', error)
+       Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Username atau Password Salah',
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 }
 

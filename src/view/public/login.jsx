@@ -19,7 +19,7 @@ const Login = () => {
 
         Service.getLogin(data.user, data.pwd).then(res => {
             
-            if(res.status === 200){
+            if(res?.status === 200){
                 dispatch(
                     login({
                         data: res.data.data.user,

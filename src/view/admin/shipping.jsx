@@ -10,7 +10,6 @@ const Shipping = () => {
 
     const user = useSelector(selectUser)
 
-    // const [path, setPath] = useState('ship');
     const {register, formState: { errors }, handleSubmit} = useForm();
     const [showModal, setShowModal] = useState(false);
     const [data, setData] = useState([]);
@@ -21,7 +20,6 @@ const Shipping = () => {
     useEffect(() => {
         if (user) {
             Service.getShippingComps(user.token).then(res => {
-                // console.log('res data shipping', res.data.data)
                 if (res.status === 200) {
                     setData(res.data.data)
                 }
@@ -40,11 +38,9 @@ const Shipping = () => {
         )
     }, [input,data]);
 
-    // console.log('data', data)
     const clickHandler = (data) => {
         var authKey = user.token;
         Service.postShippingComps(authKey, data.name).then(res => {
-            // console.log('res', res)
             if (res?.status === 200) {
                 setShowModal(false);
                 Swal.fire({
