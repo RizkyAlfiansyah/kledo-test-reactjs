@@ -88,7 +88,7 @@ const Shipping = () => {
                     <div className='flex flex-col w-full h-auto bg-gray-200 mx-2 my-4 rounded-md'>
                         <h3 className='mx-4 my-2 text-black font-bold text-xl'> Nama </h3>
                     </div>
-                    <div className="xl:h-96 md:h-40 overflow-auto">
+                    <div className="h-48 overflow-auto">
                         {filteredName.map((item, index) => {
                             return (
                                 <div key={item.id} className='overflow-auto'>
